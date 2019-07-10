@@ -17,6 +17,7 @@ class AddNewListsNote extends React.Component {
                     <div className="container-fluid ">   
                         <div className="container p-3 mt-3 border rounded bg-light shadow">
                             <form name="postForm" class='postForm'>
+                                
                                 <input type="hidden" name="id-note" value="0" />
                                 <input type="hidden" name="type-note" value="list" />
                                 <div className="container" >   

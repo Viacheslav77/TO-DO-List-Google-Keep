@@ -16,6 +16,8 @@ class AddNewNote extends React.Component {
                 <body>
                     <div className="container">
                         <h2 className="text-center">Add new note</h2>
+                        {console.log(this.props.result._id)}
+
                         <InputForm />
                     </div>
                     <LayoutFooter />

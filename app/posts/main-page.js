@@ -9,10 +9,14 @@ module.exports = function(app, db) {
             res.render('AddNewNote')
         })
 
+
         .get('/posts/:id', async (req, res) => {
             const id = objectId(req.params.id);
             const result = await db.collection('postList').findOne({_id: id});
-            res.send(result);
+            
+            res.render('AddNewNote', {result : result});
+          
+            // res.send(result);
         })
         .get('/in-json', async (req, res) => {
             const result = await db.collection('postList').find().toArray();

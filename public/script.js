@@ -1,9 +1,9 @@
 
 $("table").on("click", ".editPost", (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     console.log(e.target.attributes['data-id'].value);
     let id = e.target.attributes['data-id'].value;
-    window.location.replace("/addNewNote");
+    
     GetPost(id);
 
 });
@@ -21,12 +21,12 @@ function GetPost(id) {
         type: "GET",
         contentType: "application/json",
         success: (post) => {
-            
-            console.log('------------',post._id, post.title, post.body)
-            let form = document.forms["postForm"];
-            form.elements["id-note"].value = post._id;
-            form.elements["postName"].value = post.title;
-            form.elements["postBody"].value = post.body;
+            // window.location.replace("/addNewNote");
+            // console.log('------------',post._id, post.title, post.body)
+            // let form = document.forms["postForm"];
+            // form.elements["id-note"].value = post._id;
+            // form.elements["postName"].value = post.title;
+            // form.elements["postBody"].value = post.body;
             
         }
     });
