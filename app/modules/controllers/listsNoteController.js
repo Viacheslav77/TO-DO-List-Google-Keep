@@ -1,11 +1,10 @@
 const listsNoteDb = require('../models/listsNoteMongoDb');
 
 module.exports = (db) => {
+    
     module.exports.createNewListsNote = (req, res) => {
         res.render('AddNewListsNote')
     } 
-    
-    
     
     
     module.exports.all = (req, res) => {

@@ -1,6 +1,6 @@
 const React = require('react');
 const Layout = require('./layout');
-const InputForm = require('./inputForm');
+const InputForm = require('./InputForm');
 
 
 class EditNote extends React.Component {

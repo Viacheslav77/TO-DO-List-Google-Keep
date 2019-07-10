@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./layout');
-const InputForm = require('./inputForm');
-const TableToDoList = require('./tableToDoList');
+const LayoutFooter = require('./LayoutFooter');
+const TableToDoList = require('./TableToDoList');
 
 
 class MainPage extends React.Component {
@@ -35,7 +35,8 @@ class MainPage extends React.Component {
                         <TableToDoList result={this.props.result} />
 
                     </div>
-                    <script src="/script.js"></script>
+                    <LayoutFooter />
+
                 </body>
             </html>
         )

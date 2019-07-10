@@ -1,6 +1,7 @@
 const React = require('react');
-const Layout = require('../views/layout');
-const InputForm = require('../views/inputForm');
+const Layout = require('./layout');
+const InputForm = require('./InputForm');
+const LayoutFooter = require('./LayoutFooter');
 
 
 class AddNewNote extends React.Component {
@@ -17,7 +18,7 @@ class AddNewNote extends React.Component {
                         <h2 className="text-center">Add new note</h2>
                         <InputForm />
                     </div>
-                    <script src="/script.js"></script>
+                    <LayoutFooter />
                 </body>
             </html>
 

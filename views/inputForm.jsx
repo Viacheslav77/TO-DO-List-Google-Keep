@@ -8,7 +8,7 @@ class InputForm extends React.Component {
     render() {
         return (
             <form name="postForm">
-                <input type="hidden" name="id" value="0"/>
+                <input type="hidden" name="id-note" value="0"/>
                 <input type="hidden" name="type-note" value="note"/>
 
                 <div className="form-group text-center">
@@ -22,7 +22,7 @@ class InputForm extends React.Component {
                     </label>
                 </div>
                 <div className="panel-body text-center">
-                    <button type="submit" className="btn btn-sm btn-primary m-2"> Сохранить</button>
+                    <button id='save-form' className="btn btn-sm btn-primary m-2"> Сохранить</button>
                     <button id="reset" className="btn btn-sm btn-primary m-2"> Сбросить</button>
                 </div>
             </form>

@@ -1,6 +1,18 @@
+
 body {
     background-color: lightgoldenrodyellow;
+  
 }
+
+input {
+    /* font-size: 0.5rem !important;  */
+}
+
+
+
+/* ol, ul {
+    list-style: none;
+  } */
 
 
 /* .form-group label {
