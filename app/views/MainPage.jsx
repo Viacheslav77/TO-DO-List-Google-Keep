@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('../../app/views/layout');
+const Layout = require('../../app/views/Layout');
 const LayoutFooter = require('../../app/views/LayoutFooter');
 const TableToDoList = require('../../app/views/TableToDoList');
 const ListGroupNotes = require('../../app/views/ListGroupNotes')
