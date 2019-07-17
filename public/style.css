@@ -4,6 +4,10 @@ body {
   
 }
 
+.logo {
+    background-image: url(../public/forkio-favicon.png);
+}
+
 
 /* .form-group label {
     display: block;

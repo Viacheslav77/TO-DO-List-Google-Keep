@@ -14,7 +14,7 @@ module.exports = function(app, db) {
             const id = objectId(req.params.id);
             const result = await db.collection('postList').findOne({_id: id});
             
-            res.render('AddNewNote', {result : result});
+            res.render('ListsNote', {result : result});
           
             // res.send(result);
         })

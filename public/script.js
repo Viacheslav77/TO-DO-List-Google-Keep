@@ -1,12 +1,59 @@
 
+$('body').on('click', (e) => {
+    // e.preventDefault();
+
+    if(e.target.id =='none'){
+        reset();
+        $("#new-note").show();
+        $('#list-note').hide();
+        
+   
+    }
+    if (e.target.id == 'new-title') {
+        $("#new-note").hide();
+        $('#list-note').show();
+    }
+
+    if (e.target.id == '.editPost') {
+        console.log(e.target.attributes['data-id'].value);
+        let id = e.target.attributes['data-id'].value;
+        window.location.replace("/posts/" + id);
+    }
+
+
+    console.log(e.target.id);
+
+    // if (e.target.id == 'new-title') {
+    //     $("#new-title").attr("placeholder", "Title");
+    //     $("#new-title").removeAttr("id");
+
+    //     let newLi = document.createElement('li');
+    //     newLi.innerHTML = '<input class="form-control border border-light mb-1 new-item" id ="new-item" type="text" autocomplete="off" name="postBody" placeholder="+ New list item" required />';
+    //     listItems.appendChild(newLi);
+    // }
+
+})
+
+// $('#new-note').on('click', (e) => {
+//     $("#new-note").attr("placeholder", "Title");
+//     $("#new-note").removeAttr("id");
+
+//     let newLi = document.createElement('li');
+//     newLi.innerHTML = '<input class="form-control border border-light mb-1 new-item" id ="new-item" type="text" autocomplete="off" name="postBody" placeholder="+ New list item" required />';
+//     listItems.appendChild(newLi);
+
+// });
+
+
 $("table").on("click", ".editPost", (e) => {
     e.preventDefault();
     console.log(e.target.attributes['data-id'].value);
     let id = e.target.attributes['data-id'].value;
-    
-    GetPost(id);
+    window.location.replace("/posts/" + id);
+    // GetPost(id);
 
 });
+
 $("table").on("click", ".removePost", (e) => {
     // e.preventDefault();
 
@@ -27,7 +74,7 @@ function GetPost(id) {
             // form.elements["id-note"].value = post._id;
             // form.elements["postName"].value = post.title;
             // form.elements["postBody"].value = post.body;
-            
+
         }
     });
 }
@@ -84,7 +131,19 @@ function reset() {
     let form = document.forms["postForm"];
     form.elements["id-note"].value = 0;
     form.elements["postName"].value = '';
-    form.elements["postBody"].value = '';
+    $('#listItems').html('<li> <input class="form-control border border-light mb-1 new-item" id ="new-item" type="text" autocomplete="off" name="postBody" placeholder="+ New list item" required /></li>');
+            
+
+
+    // form.elements["postBody"].length = 0;
+    
+    // for (let index = 0; index < form.elements["postBody"].length; index++) {
+    //     // form.elements["postBody"][index].pop();
+    //     console.log(form.elements["postBody"][index]);
+    // }
+
+    
+ 
 }
 
 function CreateListsNote(title, body) {
@@ -114,7 +173,6 @@ $('#listItems').on('click', (e) => {
             let newLi = document.createElement('li');
             newLi.innerHTML = '<input class="form-control border border-light mb-1 new-item" id ="new-item" type="text" autocomplete="off" name="postBody" placeholder="+ New list item" required />';
             listItems.appendChild(newLi);
-            // $(document).ready();
         });
     }
 
@@ -128,8 +186,8 @@ $("#save-form").on("click", (e) => {
     let typeNote = form.elements["type-note"].value;
     let title = form.elements["postName"].value;
     let body;
-    if (typeNote == 'note') {      
-        
+    if (typeNote == 'note') {
+
         body = form.elements["postBody"].value;
         console.log(body);
         if (id == 0) {
@@ -137,19 +195,14 @@ $("#save-form").on("click", (e) => {
         } else {
             EditPost(id, title, body);
         }
-    } if (typeNote == 'list') {      
-        
+    } if (typeNote == 'list') {
+
         body = [];
         form.elements["postBody"].forEach(element => {
             if (element.value == "") return;
-                body.push(element.value)
+            body.push(element.value)
         });
-    
-        body.forEach(element => {
-            console.log(element)
-        });
-        
-        
+
         if (id == 0) {
             CreateListsNote(title, body);
         } else {

@@ -3,7 +3,10 @@ const listsNoteDb = require('../models/listsNoteMongoDb');
 module.exports = (db) => {
     
     module.exports.createNewListsNote = (req, res) => {
-        res.render('AddNewListsNote')
+        const result = {
+            _id: 0
+        };
+        res.render('ListsNote', {result : result})
     } 
     
     
@@ -15,6 +18,6 @@ module.exports = (db) => {
             }
             res.render('MainPage', { result: docs });
         })
-    }
+    } 
 }
 
