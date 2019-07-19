@@ -11,8 +11,19 @@ module.exports = (app, db) => {
     ReadOnePost(app, db);
     ReadAllPosts(app, db);
     DeleteAllPosts(app, db);
+
+    listsNoteController(db);
+    app.post('/lists', listsNoteController.createNewListsNote);
+    app.get('/lists/:id', listsNoteController.editListsNote);
+    app.put('/lists', listsNoteController.editNote);
+    app.delete('/api/lists/:id', listsNoteController.deliteNote);
+
+
+
     
-    listsNoteController(db);  
-    app.get('/lists',  listsNoteController.createNewListsNote);
-    
+
+
+
+
+
 }

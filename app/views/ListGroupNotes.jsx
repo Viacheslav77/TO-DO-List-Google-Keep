@@ -17,31 +17,29 @@ class ListGroupNotes extends React.Component {
             let body = '';
             if (note.typeNote == 'lists') {
                 note.body.forEach(bodyItem => {
-                   
-                        a.push(<div> <input type="checkbox" id={bodyItem} name={bodyItem} /> <label for={bodyItem}>{bodyItem}</label> </div>);
-                    });
+
+                    a.push(<div> <input type="checkbox" className = 'body-item' id={ "/api/lists/" + `${note._id}` + "/" + `${bodyItem}`}  name={bodyItem} /> <label for={bodyItem}>{bodyItem}</label> </div>);
+                });
             } else {
-                            a.push(<p>{note.body}</p>);
-                        }
-            div.push(<a className='editPost list-group-item w-25 m-3 ' href={"/posts/" + `${note._id}`}> {a} </a>);
-                    }
-            
-                    return div
-                }
-            
+                a.push(<p>{note.body}</p>);
+            }
+            div.push(<a className='list-group-item m-3 xs'  href={"/lists/" + `${note._id}`}> {a} </a>);
+        }
+
+        return div
+    }
+
     render() {
         return (
             <body>
-                            <div className='editPost list-group flex-row flex-wrap align-items-start w-100 ml-auto mr-auto'>
-                                {this.createAddedGroupNotes()}
-                            </div>
+                <div className='list-group flex-row flex-wrap align-items-start ml-auto mr-auto' >
+                    {this.createAddedGroupNotes()}
+                </div>
 
-                        </body>
+            </body>
 
+        )
+    }
+}
 
-
-                        )
-                    }
-                }
-                
 module.exports = ListGroupNotes;

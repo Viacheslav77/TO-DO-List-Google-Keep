@@ -20,7 +20,7 @@ class MainPage extends React.Component {
                     <div className="container-fluid" id='none'>
                         <div className="container">
                             <div className="row">
-                                <img className='col-2 mt-3 logo' src='' alt='logo' />
+                                <img className='col-2 mt-3 logo' src='' alt='logo' /> {/* src={logo} */}
                                 <h3 className="col-3 text-black-50 mt-4">My Keep</h3>
                                 <input className="col mt-4 form-control border border-light mb-1 " type="text" id="search" name="new-note" placeholder="+ Search..." required />                                 
                             </div>
