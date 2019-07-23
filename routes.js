@@ -14,14 +14,9 @@ module.exports = (app, db) => {
 
     listsNoteController(db);
     app.post('/lists', listsNoteController.createNewListsNote);
-    app.get('/lists/:id', listsNoteController.editListsNote);
-    app.put('/lists', listsNoteController.editNote);
+    app.get('/lists/:id', listsNoteController.getListsNote);
+    app.put('/api/lists/:id', listsNoteController.updateListsNote);
     app.delete('/api/lists/:id', listsNoteController.deliteNote);
-
-
-
-    
-
 
 
 

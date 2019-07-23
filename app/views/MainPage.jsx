@@ -17,7 +17,7 @@ class MainPage extends React.Component {
                 <Layout />
                 <body >
 
-                    <div className="container-fluid" id='none'>
+                    <div className="container-fluid" id='click-outside'>
                         <div className="container">
                             <div className="row">
                                 <img className='col-2 mt-3 logo' src='' alt='logo' /> {/* src={logo} */}

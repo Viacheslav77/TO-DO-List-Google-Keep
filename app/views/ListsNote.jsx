@@ -11,10 +11,8 @@ class ListsNote extends React.Component {
             this.id = 0;
             this.title = '';
             this.body = [];
-        }
-        
+        }       
         else {
-
             this.id = this.props.result._id;
             this.title = this.props.result.title;
             this.body = this.props.result.body;
@@ -62,7 +60,7 @@ class ListsNote extends React.Component {
                                 <input type="hidden" name="type-note" value="list" />
                                 <div className="container" >
                                     <input className="form-control form-control-lg border border-light mb-1" type="text" autocomplete="off" name="postName" placeholder="Title" value={`${this.title}`} autoFocus = 'on' required />
-                                    <ul className="form-group text-center list-unstyled" id="listItems">
+                                    <ul className="form-group text-center list-unstyled" id="listItems" name = 'ul-items' >
                                         {this.createItems()}
                                     </ul>
                                 </div>

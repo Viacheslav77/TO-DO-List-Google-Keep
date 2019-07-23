@@ -20,6 +20,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 MongoClient.connect(db.url, { useNewUrlParser: true }, (err, client) => {
     if(err) return console.log(err); // обработка ошибки
     const database = client.db(db.dbName); // указываем к какой базе подключаться
+    database.name = db.dbNameCol;
 
     require('./routes.js')(app, database); // импортируем роуты
 
